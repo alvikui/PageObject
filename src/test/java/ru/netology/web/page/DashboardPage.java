@@ -22,9 +22,9 @@ public class DashboardPage {
     }
 
     private int extractBalance(String text) {
-        val start = text.indexOf(balanceStart);
-        val finish = text.indexOf(balanceFinish);
-        val value = text.substring(start + balanceStart.length(), finish);
+        var start = text.indexOf(balanceStart);
+        var finish = text.indexOf(balanceFinish);
+        var value = text.substring(start + balanceStart.length(), finish);
         return Integer.parseInt(value);
     }
 
@@ -42,12 +42,12 @@ public class DashboardPage {
         return new MoneyTransferPage();
     }
 
-    public static int formatWithoutMinusIssue(int secondCardBalance) {
+/*    public static int formatWithoutMinusIssue(int secondCardBalance) {
         if (secondCardBalance < 0) {
             secondCardBalance = (secondCardBalance - secondCardBalance) + 1000;
         } else {
             secondCardBalance = secondCardBalance + secondCardBalance;
         }
         return secondCardBalance;
-    }
+    }*/
 }

@@ -22,15 +22,8 @@ public class MoneyTransferPage {
         return new DashboardPage();
     }
 
-    public void emptyAmountField() {
-        $(byText("Сумма перевода должна быть больше нуля.")).shouldBe(visible);
-    }
-
     public void amountMoreThanBalance() {
         $(byText("Невозможно осуществить перевод, так как сумма превышает баланс.")).shouldBe(visible);
     }
 
-    public void enterAnotherCard() {
-        $(byText("Нельзя переводить с карты на эту же карту. Введите номер другой карты.")).shouldBe(visible);
-    }
 }

@@ -50,7 +50,7 @@ public class MoneyTransferTest {
         var dashboardPage = verificationPage.validVerify(verificationCode);
         var secondCardBalance = dashboardPage.getCardBalance(getSecondCardNumber().getCardNumber());
         var transferPage = dashboardPage.depositToFirstCard();
-        int amount = DashboardPage.formatWithoutMinusIssue(secondCardBalance);
+        int amount = DataHelper.generateInvalidAmount(secondCardBalance);
         transferPage.transferMoney(amount, DataHelper.getSecondCardNumber());
         transferPage.amountMoreThanBalance();
     }
